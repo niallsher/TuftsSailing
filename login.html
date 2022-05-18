@@ -60,7 +60,7 @@
                console.log(response.credential)
 
                
-               const responsePayload = jose.jwtDecrypt(response.credential);
+               const responsePayload = jwtDecrypt(response.credential);
           
                console.log("ID: " + responsePayload.sub);
                console.log('Full Name: ' + responsePayload.name);
