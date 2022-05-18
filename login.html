@@ -5,9 +5,10 @@
     <link rel="stylesheet" type = "text/css" href="stylesheet.css">
     <title>Tufts Sailing</title>
     <link rel="stylesheet" type = "text/css" href="stylesheet.css">
-    <meta name="google-signin-scope" content="profile email">
-    <meta name="google-signin-client_id" content="745193146933-39p4j3afkq9j0teip6einrjkdqpjikik.apps.googleusercontent.com">
-    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <!-- <meta name="google-signin-scope" content="profile email"> -->
+    <!-- <meta name="google-signin-client_id" content="745193146933-39p4j3afkq9j0teip6einrjkdqpjikik.apps.googleusercontent.com"> -->
+    <!-- <script src="https://apis.google.com/js/platform.js" async defer></script> -->
+    <!-- <script src="https://accounts.google.com/gsi/client" async defer></script> -->
     <!-- <script src="https://account.google.com/gsi/client" async defer></script> -->
 
 </head>
@@ -28,6 +29,25 @@
 
     </header>
 
+
+    <body>
+        <script src="https://accounts.google.com/gsi/client" async defer></script>
+        <div id="g_id_onload"
+           data-client_id="745193146933-39p4j3afkq9j0teip6einrjkdqpjikik.apps.googleusercontent.com"
+           data-login_uri="https://niallsher.github.io/TuftsSailing/homepage.html"
+           data-auto_prompt="false">
+        </div>
+        <div class="g_id_signin"
+           data-type="standard"
+           data-size="large"
+           data-theme="outline"
+           data-text="sign_in_with"
+           data-shape="rectangular"
+           data-logo_alignment="left">
+        </div>
+    </body>
+
+
     <br>
     <div>
        
@@ -43,7 +63,7 @@
             
         </div>
         <!-- <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div> -->
-        <div class="g-signin2"></div>
+        <!-- <div class="g-signin2"></div> -->
 
         <!-- <script>
         function onSignIn(googleUser) {
