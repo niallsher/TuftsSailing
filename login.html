@@ -31,12 +31,15 @@
 
 
     <body>
+        <script src="https://github.com/panva/jose.git"></script>
+
+
         <script src="https://accounts.google.com/gsi/client" async defer></script>
         <div id="g_id_onload"
            data-client_id="745193146933-39p4j3afkq9j0teip6einrjkdqpjikik.apps.googleusercontent.com"
            data-login_uri="https://niallsher.github.io/TuftsSailing/homepage.html"
-           data-auto_prompt="false"
-           data-callback="handleCredentialResponse">
+           data-auto_prompt="false">
+
         </div>
         <div class="g_id_signin"
            data-type="standard"
@@ -56,7 +59,7 @@
                console.log(response.credential)
 
                
-               const responsePayload = decodeJwtResponse(response.credential);
+               const responsePayload = jose.jwtDecrypt(response.credential);
           
                console.log("ID: " + responsePayload.sub);
                console.log('Full Name: ' + responsePayload.name);
