@@ -4,7 +4,6 @@
 <meta name='viewport' content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type = "text/css" href="stylesheet.css">
 <title>Tufts Sailing</title>
-<link rel="stylesheet" type = "text/css" href="stylesheet.css">
 	
 </head>
 
@@ -13,18 +12,79 @@
         <a class = "logoBut" href ="index.html" align ="left"> 
             <img id = "logo" align="left" src="burgee.png">
         </a>
-        <h1 class="org"> &nbsp; Tufts Sailing</h1>
-        <a class = current href = "index.html"> Home</a>
-        <a href = "schedule.html"> Regattas</a>
-        <a href = "about.html"> About Us</a>
-        <a href = "contact.html"> Contact Us</a>
-        <a href = "login.html"> Login</a>
+        <h1> &nbsp; Tufts Sailing</h1>
+        <a class = current href = "index.html">Home</a>
+        <a href = "form.html">Form</a>
 
-
-
-           
     </header>
+    <br>
 
-    <h2>Hi there!</h2>
+    <h2>Welcome to our new system for keeping track of practice schedules!</h2>
+    <h3>Please use the form tab to fill out your information if you have not done so already.</h3>
+
+    <br><br>
+
+    <div>
+        <p>Admin Sign-in:</p>
+        <form id="infoForm" method="post" action="/admin" onsubmit="return Validate();" >
+            <p>Full Name: <input type="text" name="Name"/></p>
+                <span id="errName" class="errMsg">Required</span>
+            <p>Password: <input type="password" name="Pwd"/></p>
+                <span id="errPwd" class="errMsg">Required</span>
+            <p><input type="submit" value = "Submit Form"></p>
+            <span id="errForm" class="errMsg">Invaild Credentials</span>
+            
+        </form>
+
+        <script>
+            function Validate() {
+                console.log("before submit!")
+                
+        
+                document.getElementById("errName").style.display = "none";
+                document.getElementById("errPwd").style.display = "none";
+                document.getElementById("errForm").style.display = "none";
+
+                /* validate last name field */
+                var valid = false;
+                var name_recieved = document.getElementsByName("Name")[0].value
+                var pwd_recieved = document.getElementsByName("Pwd")[0].value
+
+                const ns = {Name:"Niall Sheridan", pwd:"jumbos"};
+                const pm = {Name:"Patrick Mulcahy", pwd:"6lark9"};
+                const ck = {Name:"Caroline Kelly", pwd:"frattyG"};
+                const cb = {Name:"Celia Bryne", pwd:"junior"};
+
+
+
+                var admin_arr = [ns, pm, ck, cb]
+
+                for (let i=0; i < admin_arr.length; i++) {
+                    if (admin_arr[i].Name == name_recieved) {
+                        if (admin_arr[i].pwd == pwd_recieved) {
+                            valid = true;
+                            break
+                        }
+                    }
+                }
+                
+
+                /* Tell the user that the form was not filled out correctly */
+                if (!valid) {
+                    
+                    document.getElementById("errForm").style.display = "inline-block";
+
+                    return false;
+                } else {
+                    return true;
+                }
+
+            }
+
+        </script>
+
+
+
+    </div>
     
 </body>

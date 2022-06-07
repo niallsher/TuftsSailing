@@ -1,0 +1,134 @@
+<html>
+
+<head>
+<meta name='viewport' content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type = "text/css" href="stylesheet.css">
+<title>Tufts Sailing</title>
+	
+</head>
+
+<body>
+    <header>
+        <a class = "logoBut" href ="index.html" align ="left"> 
+            <img id = "logo" align="left" src="burgee.png">
+        </a>
+        <h1> &nbsp; Tufts Sailing</h1>
+        <a href = "index.html">Home</a>
+        <a href = "form.html">Form</a>
+        <a class='current' href = "admin.html">Admin Page</a>
+
+
+    </header>
+    <br>
+
+    <h2>Welcome to the admin Page</h2>
+    <br>
+    <p>Use the form below to make queries to build lineups, see roster and such</p>
+
+    <form id="query_form" method="post" action="/lineup.html">
+        <p>
+            <input type="radio" name="query" value="Lineup" checked="checked"/>Lineup
+            <input type="radio" name="query" value="Roster"/>Roster
+        </p>
+        <p>
+            <label for="weekday"><b>Day:</b></label>
+            <select name="weekday" id="weekday">
+                <option value="Tuesday">Tuesday</option>
+                <option value="Wednesday">Wednesday</option>
+                <option value="Thurday">Thursday</option>
+                <option value="Friday">Friday</option>
+            </select>
+        </p>
+
+        <p id="lineupOptions">
+            <p>Lineup Options:</p>
+            <div class="leftCol">
+                <div id="options" name="options">
+                    <label for="Pairings">With Pairings</label>
+                    <input type="checkbox" id="Pairings" name="option" value="Pairings" checked="checked"/>
+                </div>
+                <div id="options" name="options">
+                    <label for="BoatNum">Include Boat Numbers</label>
+                    <input type="checkbox" id="BoatNum" name="option" value="BoatNum" checked="checked"/>
+                </div>
+                <div id="options" name="options">
+                    <label for="StartTime">Separate Starting Time</label>
+                    <input type="checkbox" id="StartTime" name="option" value="StartTime"/>
+                </div>
+                <div id="options" name="options">
+                    <label for="Loners">Separate Unpaired</label>
+                    <input type="checkbox" id="Loners" name="option" value="Loners"/>
+                </div>
+                
+            </div>
+            <div class="rightCol">
+                <div id="options" name="options">
+                    <label for="AssignBoats">Use Assigned Boats</label>
+                    <input type="checkbox" id="AssignBoats" name="option" value="AssignBoats"/>
+                </div>
+                <div id="options" name="options">
+                    <label for="SixOclock">Highlight 6 O-clocks</label>
+                    <input type="checkbox" id="SixOclock" name="option" value="SixOclock"/>
+                </div>
+                <div id="options" name="options">
+                    <label for="ArriveLate">Hightlight Late Arrivals</label>
+                    <input type="checkbox" id="ArriveLate" name="option" value="ArriveLate"/>
+                </div>
+                <div id="options" name="options">
+                    <label for="Teams">Use Set Teams</label>
+                    <input type="checkbox" id="Teams" name="option" value="Teams"/>
+                </div>
+                
+            </div>
+        </p>
+
+
+        <p><input type="submit" value = "Make Lineup" id="lineup_submit"></p>
+        <p><input type="submit" value = "View Roster" id="roster_submit"></p>
+
+
+        <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+        <script language="javascript">
+
+            document.getElementsByName("query")[0].onchange = function() {lineup_or_roster()};
+            document.getElementsByName("query")[1].onchange = function() {lineup_or_roster()};
+
+            $(document).ready(lineup_or_roster());
+
+            function lineup_or_roster()
+            {
+                if (document.getElementsByName("query")[0].checked) {
+                    $('p:nth-child(2)').show();
+                    $('p:nth-child(3)').show();
+                    $('p:nth-child(4)').show();
+                    $('.leftCol').show();
+                    $('.rightCol').show();
+                    $('#lineup_submit').show();
+                    $('#roster_submit').hide();
+
+
+
+                } else {
+                    $('p:nth-child(2)').hide();
+                    $('p:nth-child(3)').hide();
+                    $('p:nth-child(4)').hide();
+                    $('.leftCol').hide();
+                    $('.rightCol').hide();
+                    $('#lineup_submit').hide();
+                    $('#roster_submit').show();
+
+
+                }
+            }
+
+        </script>
+
+        
+
+
+    </form>
+
+
+
+    
+</body>

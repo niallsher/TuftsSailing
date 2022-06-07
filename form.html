@@ -1,0 +1,125 @@
+<html>
+
+<head>
+<meta name='viewport' content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type = "text/css" href="stylesheet.css">
+<title>Tufts Sailing</title>
+	
+</head>
+
+<body>
+    <header>
+        <a class = "logoBut" href ="index.html" align ="left"> 
+            <img id = "logo" align="left" src="burgee.png">
+        </a>
+        <h1> &nbsp; Tufts Sailing</h1>
+        <a href = "index.html"> Home</a>
+        <a class = current href = "form.html">Form</a>
+
+    </header>
+    <br>
+
+    <h2>Please Fill this form out carefully:</h2>
+
+    <form id="infoForm" method="post" action="/process" onsubmit="return Validate();" >
+        <p>Full Name: <input type="text" name="Name"/></p>
+            <span id="errName" class="errMsg">Name Required</span>
+        <p>
+            <input type="radio" name="Position" value="Skipper"/>Skipper
+            <input type="radio" name="Position" value="Crew"/>Crew
+            <input type="radio" name="Position" value="Both"/>Both
+        </p>
+        <p>Partner Name: <input type="text" name="Partner"/></p>
+        <p>Phone Num: <input type="text" name="Phone"/></p>
+        <p>Tufts Email: <input type="text" name="Email"/></p>
+        <p><tr>
+            <td><label for="Year"><b>Grad Year:</b></label></td>
+            <td><select name="Year" id="Year">
+                <option value="2023">2023</option>
+                <option value="2024">2024</option>
+                <option value="2025">2025</option>
+                <option value="2026">2026</option>		
+                <option value="2027">2027</option>
+                <option value="2028">2028</option>
+            </select></td>
+        </tr></p>
+
+        <tr>
+            <td><label for="Tues"><b>Tuesday:</b></label></td>
+            <td><select name="Tuesday" id="Tues" class="day">
+                <option value="-">-</option>
+                <option value="2-">2-</option>
+                <option value="3-">3-</option>
+                <option value="2-6">2-6</option>		
+                <option value="3-6">3-6</option>
+                <option value="other">other</option>
+            </select></td>
+        </tr>
+
+        <tr>
+            <td><label for="Wed"><b>Wednesday:</b></label></td>
+            <td><select name="Wednesday" id="Wed" class="day">
+                <option value="-">-</option>
+                <option value="3-">3-</option>		
+                <option value="3-6">3-6</option>
+                <option value="other">other</option>
+            </select></td>
+        </tr>
+
+        <tr>
+            <td><label for="Thurs"><b>Thursday:</b></label></td>
+            <td><select name="Thursday" id="Thurs" class="day">
+                <option value="-">-</option>
+                <option value="2-">2-</option>
+                <option value="3-">3-</option>
+                <option value="2-6">2-6</option>		
+                <option value="3-6">3-6</option>
+                <option value="other">other</option>
+            </select></td>
+        </tr>
+
+        <tr>
+            <td><label for="Fri"><b>Friday:</b></label></td>
+            <td><select name="Friday" id="Fri" class="day">
+                <option value="-">-</option>
+                <option value="1:30-">1:30-</option>
+                <option value="3-">3-</option>		
+                <option value="other">other</option>
+            </select></td>
+        </tr>
+
+        <p><input type="submit" value = "Submit Form"></p>
+	        <span id="errOrder" class="errMsg">Fill out all required fields</span>
+    </form>
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+    <script language="javascript">
+
+        function Validate() {
+            console.log("before submit!")
+            var valid = true;
+    
+            document.getElementById("errName").style.display = "none";
+        
+            document.getElementById("errOrder").style.display = "none";
+
+            /* validate last name field */
+            if (document.getElementsByName("Name")[0].value == "") {
+                document.getElementById("errName").style.display = "inline-block";
+                valid = false;
+            }
+
+            /* Tell the user that the form was not filled out correctly */
+            if (!valid) {
+
+                document.getElementById("errOrder").style.display = "inline-block";
+
+                return false;
+            } else {
+                return true;
+            }
+
+        }
+        
+    </script>
+    
+</body>

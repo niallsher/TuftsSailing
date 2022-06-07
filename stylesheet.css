@@ -84,4 +84,163 @@ image{
 }
 
 
+/* input{
+    width: 50%;
+    font-size: 23px;
+    background-color: #feefdd;
+    margin-top: 2%;
+    margin-left: 1%;
+    text-align: center;
+    border-radius: 8px;
+}
 
+input[type=button]{
+	padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-decoration: None;
+    border: 3px solid #0b1d51;
+    color: #0b1d51;
+	background-color: #feefdd;
+}
+input[type=submit]{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-decoration: None;
+	border: 3px solid #1b4965;
+    color: #1b4965;
+	background-color: #feefdd;
+    text-align: center;
+    width: 60%;
+}
+
+
+input[type=button]:hover{
+	 background-color: #ffbc42;
+}
+
+select{
+   width: 50%;
+    font-size: 23px;
+    background-color: #feefdd;
+    margin-top: 2%;
+    margin-left: 1%;
+    text-align: center;
+    border-radius: 8px;
+    pzdding-top: 50%;
+}
+
+input[type=radio]{
+    background-color: #feefdd;
+    color: #487459;
+    text-align: center;
+    cursor: pointer;
+    height: 30px;
+    width: 40px;
+    margin-left: 30%;
+    margin-right: 30%;
+}
+
+table {
+    background: transparent;
+    font-size: 23px;
+    align: center; 
+}
+
+tbody{
+    backround: transparent;
+}
+
+table,td {
+  border: none;
+}
+
+
+form input[type=button]{
+	text-align: center;
+} */
+
+/* form {
+	align: center;
+	margin-top: 50px;
+	border: 2px solid #000;
+	padding: 10px 10px;
+    text-align: center;
+    display: inline-block;
+    
+
+} */
+
+form {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    border: 1px solid #000;
+    padding: 0px 10px 15px 15px;
+    max-width: 800px;
+}
+
+.errMsg {
+    color: #D20E11;
+    border: solid 1px #d20e11;
+    display: none;
+    padding: 1px 15px; 
+    margin-left: 5px;
+    font-size: 12px;
+}
+
+
+.leftCol, .rightCol {
+    float: left;
+    width: 49%;
+    color: #000000;
+    padding: 10px;
+    text-align: center;
+    
+}
+
+#lineupOptions div {
+    display: inline-block;
+    box-sizing: border-box;
+    padding: 5px;
+}
+
+div {
+    display: inline-block;
+    box-sizing: border-box;
+    padding: 5px;
+}
+
+form p {
+    margin: 15px
+}
+
+#tableCols div table {
+    border-collapse: collapse;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#lineup_table {
+    border-collapse: collapse;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto; 
+
+
+}
+
+#lineup_table td, th {
+    border: 1px solid #000;
+    padding: 5px 5px 5px 5px;
+    
+}
+
+#tableCols div table td, th {
+    border: 1px solid #000;
+    padding: 5px 5px 5px 5px;
+    
+}
+    

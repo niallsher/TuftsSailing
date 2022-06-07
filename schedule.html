@@ -4,7 +4,6 @@
 <meta name='viewport' content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type = "text/css" href="stylesheet.css">
 <title>Tufts Sailing</title>
-<link rel="stylesheet" type = "text/css" href="stylesheet.css">
 	
 </head>
 
@@ -13,16 +12,57 @@
         <a class = "logoBut" href ="index.html" align ="left"> 
             <img id = "logo" align="left" src="burgee.png">
         </a>
-        <h1 class="org"> &nbsp; Tufts Sailing</h1>
-        <a href = "index.html"> Home</a>
-        <a class = current href = "schedule.html"> Regattas</a>
-        <a href = "about.html"> About Us</a>
-        <a href = "contact.html"> Contact Us</a>
-        <a href = "login.html"> Login</a>
+        <h1> &nbsp; Tufts Sailing</h1>
+        <a class = current href = "index.html">Home</a>
+        <a href = "form.html">Form</a>
 
-
-
-           
     </header>
+    <h2>Your Schedule:</h2>
+    
+
+
+    <div id='tableCols'><div class='leftCol'>
+            
+        </div><div class='rightCol'><table><tr><th>Skippers</th><th>Crews</th></tr></table>
+        
+        if (skippers.length < crews.length) {
+
+            for (let i = 0; i < crews.length; i++) {
+                if (i >= skippers.length) {
+                    <tr><td></td><td>crews[i].Name</td></tr>
+                } else {
+                    <tr><td>skippers[i].Name</td><td>crews[i].Name</td></tr>
+                }
+            }
+        }
+
+        </div>
+    </div>
+
+    <!-- <script src='https://code.jquery.com/jquery-3.6.0.slim.min.js' integrity='sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=' crossorigin='anonymous'></script>
+    <script language='javascript'>
+        document.getElementsByName('skippers')[0].onchange = function() {move_skipper()};
+        // document.getElementsByName("p_or_d")[1].onchange = function() {pick_or_del()};
+
+        $(document).ready(move_skipper());
+
+        function move_skipper()
+        {
+            if (document.getElementsByName('skippers')[0].value != '') {
+                for (let i = 0; i < skippers.length; i++) {
+                    if (document.getElementsByName('skippers')[0].value == document.getElementById('skip'+i)[i].value) {
+                        document.getElementById('skip'+i)[i].style.display = none;
+                    }
+                }
+
+            } else {
+                
+            }
+        }
+    </script> -->
+
+
+
+
 
 </body>
